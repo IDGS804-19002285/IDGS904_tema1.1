@@ -9,17 +9,7 @@ namespace IDGS904_tema1.Controllers
 {
     public class EscuelaController : Controller
     {
-        /*public ContentResult Index2()
-        {
-            return Content("<h1>Robert <br> Cardiel</h1>");
-            //return View();
-        }
-
-        public ViewResult Index()
-        {
-            return View("<h1>Robert <br> Cardiel</h1>");
-            //return View();
-        }*/
+       
         public ActionResult Index()
         {
             var pulque = new Productos()
@@ -60,19 +50,25 @@ namespace IDGS904_tema1.Controllers
         ViewData
         TempData*/
 
+        
         public ActionResult CalcularDistancia(CalcularDistancia CD)
         {
             var model = new CalcularDistancia();
             //ViewBag.distancia = model.Calcular(CD.X1, CD.Y1, CD.X2, CD.Y2);
-            if (CD.X1 != 0)
+            if (!string.IsNullOrEmpty(CD.X1.ToString()) &&
+                !string.IsNullOrEmpty(CD.Y1.ToString()) &&
+                !string.IsNullOrEmpty(CD.X2.ToString()) &&
+                !string.IsNullOrEmpty(CD.Y2.ToString())
+                )
             {
-                ViewData["Resultado"] = model.Calcular(CD.X1, CD.Y1, CD.X2, CD.Y2);
-                return RedirectToAction("CalcularDistancia Resultado");
+                ViewBag.Resultado = "El resultado es: " +model.Calcular(CD.X1, CD.Y1, CD.X2, CD.Y2);
+                
+            } else {
+                ViewBag.Resultado = "No hay resultado, aun";
             }
-            else {
-                ViewData["Resultado"] = "No hay resultado";
-                return RedirectToAction("CalcularDistancia Resultado");
-            }
+            return View();
         }
+
+
     }
 }

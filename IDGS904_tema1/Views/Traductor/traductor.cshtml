@@ -1,0 +1,29 @@
+﻿@model IEnumerable<IDGS904_tema1.Models.Traductor>
+
+@{
+    ViewBag.Title = "Diccionario";
+}
+
+<h2>Diccionario Ingles-Español</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Español
+        </th>
+        <th>
+            Ingles
+        </th>
+    </tr>
+    @for (int i = 0; i < @ViewBag.esp.Length; i++)
+    {
+        <tr>
+            <td>
+                @ViewBag.esp.GetValue(i)
+            </td>
+            <td>
+                @ViewBag.ing.GetValue(i)
+            </td>
+        </tr>
+    }
+</table>

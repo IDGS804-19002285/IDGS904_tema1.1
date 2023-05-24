@@ -1,0 +1,56 @@
+﻿@model IDGS904_tema1.Models.triangulo
+
+@{
+    ViewBag.Title = "Triangulo";
+}
+
+<h2>Convertidor de temperaturas </h2>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.x1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.x1, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.y1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.y1, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.x2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.x2, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.y2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.y2, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.x3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.x3, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.y3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.y3, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+        <input type="submit" name="name" value="Calcular " />
+    </div>
+}
+
+
+<h1>Forma= @ViewBag.Tipo</h1>
+<h1>Área= @ViewBag.Area</h1>
+
+
+

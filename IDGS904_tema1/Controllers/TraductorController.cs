@@ -68,7 +68,7 @@ namespace IDGS904_tema1.Controllers
                 }
             }
 
-            ViewBag.palabra = (palabra == null ? "0 Coincidencias" : "La palabra '" + T.palabra + "'" + " traducida al " + idioma + " es '" + palabra + "'");
+            ViewBag.palabra = (palabra == null ? "0 Coincidencias" : palabra );
             return View();
         }
     }

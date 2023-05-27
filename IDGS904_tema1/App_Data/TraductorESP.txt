@@ -1,2 +1,5 @@
 rojo
 azul
+rojo
+verde
+pinguino
